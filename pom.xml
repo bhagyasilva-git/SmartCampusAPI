@@ -1,11 +1,11 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>uk.ac.westminster</groupId>
-    <artifactId>SmartCampusAPI</artifactId>
+    <groupId>com.smartcampus</groupId>
+    <artifactId>SmartCampus</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>war</packaging>
-    <name>SmartCampusAPI-1.0-SNAPSHOT</name>
+    <name>SmartCampus-1.0-SNAPSHOT</name>
     
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
@@ -17,29 +17,24 @@
     </properties>
     
     <dependencies>
+       
+        <!-- JAX-RS-->
         <dependency>
-            <groupId>javax</groupId>
-            <artifactId>javaee-api</artifactId>
-            <version>${jakartaee}</version>
-            <scope>provided</scope>
+            <groupId>org.glassfish.jersey.inject</groupId>
+            <artifactId>jersey-hk2</artifactId>
+            <version>2.32</version>
         </dependency>
-        
-        
-        <!-- Source: https://mvnrepository.com/artifact/org.glassfish.jersey.containers/jersey-container-servlet -->
+        <!-- JAX-RS Implementation (Jersey)-->
+
         <dependency>
             <groupId>org.glassfish.jersey.containers</groupId>
             <artifactId>jersey-container-servlet</artifactId>
             <version>2.32</version>
-            <scope>compile</scope>
         </dependency>
-        <dependency> 
-            <groupId>org.glassfish.jersey.inject</groupId> 
-            <artifactId>jersey-hk2</artifactId> 
-            <version>2.32</version> 
-        </dependency> 
+        <!--Jackson forJSON-->
         <dependency>
-            <groupId>org.glassfish.jersey.core</groupId>
-            <artifactId>jersey-server</artifactId>
+            <groupId>org.glassfish.jersey.media</groupId>
+            <artifactId>jersey-media-json-jackson</artifactId>
             <version>2.32</version>
         </dependency>
     </dependencies>
@@ -49,10 +44,10 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.8.1</version>
+                <version>3.1</version>
                 <configuration>
-                    <source>8</source>
-                    <target>8</target>
+                    <source>1.8</source>
+                    <target>1.8</target>
                     <compilerArguments>
                         <endorseddirs>${endorsed.dir}</endorseddirs>
                     </compilerArguments>
@@ -61,7 +56,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-war-plugin</artifactId>
-                <version>3.2.2</version>
+                <version>3.4.0</version>
                 <configuration>
                     <failOnMissingWebXml>false</failOnMissingWebXml>
                 </configuration>
