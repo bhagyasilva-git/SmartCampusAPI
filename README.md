@@ -39,27 +39,50 @@ http://localhost:8080/SmartCampus/api/v1
 ## 📦 Project Architecture
 
 
+
 com.smartcampus.smartcampus
+
 │
+
 ├── resources
+
 │ ├── RoomResource
+
 │ ├── SensorResource
+
 │ └── SensorReadingResource
+
 │
+
 ├── model
+
 │ ├── Room
+
 │ ├── Sensor
+
 │ └── SensorReading
+
 │
+
 ├── exception
+
 │ ├── RoomNotEmptyException
+
 │ ├── LinkedResourceNotFoundException
+
 │ ├── SensorUnavailableException
+
 │ ├── DataNotFoundException
+
 │ ├── Exception Mappers (409, 422, 403, 500)
+
 │
+
 └── filter
+
 └── LoggingFilter
+
+
 
 
 ---
@@ -104,7 +127,7 @@ http://localhost:8080/SmartCampus/api/v1
 
 ---
 
-# 1. 🔎 Discovery Endpoint (HATEOAS)
+# 1.  Discovery Endpoint (HATEOAS)
 
 ### GET
 
@@ -123,7 +146,7 @@ http://localhost:8080/SmartCampus/api/v1
     "readings": "/api/v1/sensors/{sensorId}/readings"
   }
 }
-2. 🏢 Room Management
+2.  Room Management
 GET /rooms
 [
   {
@@ -151,18 +174,18 @@ GET /rooms/{id}
 }
 DELETE /rooms/{id}
 
-✅ Success:
+ Success:
 
 204 No Content
 
-❌ If room has sensors:
+ If room has sensors:
 
 {
   "errorMessage": "Room still has active sensors",
   "errorCode": 409,
   "documentation": "http://localhost:8080/api/docs/errors"
 }
-3. 📡 Sensor Management
+3.  Sensor Management
 GET /sensors
 [
   {
@@ -187,7 +210,7 @@ POST /sensors
 Response
 201 Created
 
-❌ If room does not exist:
+ If room does not exist:
 
 {
   "errorMessage": "Room does not exist",
@@ -202,7 +225,7 @@ GET /sensors/{id}
   "currentValue": 450,
   "status": "ACTIVE"
 }
-4. 📊 Sensor Readings (Sub-Resource)
+4.  Sensor Readings (Sub-Resource)
 GET /sensors/{id}/readings
 [
   {
@@ -220,7 +243,7 @@ Response
 ✔ Side Effect:
 
 Automatically updates currentValue in Sensor
-5. ⚠️ Exception Handling
+5.  Exception Handling
 
 The API uses centralized exception handling via ExceptionMapper.
 
@@ -236,7 +259,7 @@ Standard Error Format
   "errorCode": 422,
   "documentation": "http://localhost:8080/api/docs/errors"
 }
-6. 🪵 Logging Filter
+6.  Logging Filter
 
 Implements:
 
@@ -255,16 +278,18 @@ Status: 200
 
 ✔ Used for debugging and system observability.
 
+
 🧠 DESIGN HIGHLIGHTS
 
-✔ RESTful JAX-RS architecture
-✔ Proper HTTP method usage (GET/POST/DELETE)
-✔ QueryParam filtering
-✔ Sub-resource locator pattern
-✔ Exception-driven API design
-✔ Global error safety net (500 handler)
-✔ Logging filter (cross-cutting concern)
-✔ In-memory storage only (HashMap / ArrayList)
+
+ RESTful JAX-RS architecture
+ Proper HTTP method usage (GET/POST/DELETE)
+ QueryParam filtering
+ Sub-resource locator pattern
+ Exception-driven API design
+ Global error safety net (500 handler)
+ Logging filter (cross-cutting concern)
+ In-memory storage only (HashMap / ArrayList)
 
 📌 KEY DESIGN DECISIONS
 ✔ Why QueryParam?
@@ -281,11 +306,11 @@ Ensures clean JSON error responses and prevents stack trace leakage.
 
 👨‍💻 AUTHOR
 
-This project was developed as part of an academic coursework submission.
+This project was developed for academic purpose.
 
 Module: Client-Server Architecture
 Institution: University of Westminster (IIT Sri Lanka)
-Programme: BSc (Hons) Software Engineering
+Programme: BSc (Hons) Computer Science
 Academic Year: 2025/2026 (Level 5)
-Type: Individual Coursework Project
+Type: Individual Project
 Technology: JAX-RS (Jersey), Apache Tomcat, Maven
