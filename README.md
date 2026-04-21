@@ -1,29 +1,18 @@
-# Smart Campus API 
+# Smart Campus API (JAX-RS Coursework)
 
-## 
-📌 Overview
-
+## 📌 Overview
 
 The Smart Campus API is a RESTful web service developed using **JAX-RS (Jersey)** and deployed on **Apache Tomcat**.
 
-
 It simulates a smart campus management system that handles:
 
-
 - Room management
-- 
 - Sensor management
-- 
 - Sensor readings (historical data)
-- 
 - Exception handling & validation rules
-- 
 - Logging and request/response monitoring
-  
-
 
 The system uses **in-memory data structures (HashMap & ArrayList)** instead of a database, as required by the coursework specification.
-
 
 ---
 
