@@ -96,15 +96,15 @@ Open the project in NetBeans IDE (or import as a Maven project in your preferred
 
 **2. Build the project**
 
-```bash
-mvn clean install
-```
+clean and build 
 
 **3. Deploy to Tomcat**
 
-Copy the generated `.war` file from the `target/` directory to your Tomcat `webapps/` folder, then start Tomcat.
+start Tomcat.
 
 **4. Access the API**
+
+Run the project
 
 ```
 http://localhost:8080/SmartCampus/api/v1
