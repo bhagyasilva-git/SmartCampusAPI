@@ -1,10 +1,10 @@
-# 🏛️ Smart Campus API
+#  Smart Campus API
 
 > A RESTful web service for smart campus management, built with JAX-RS (Jersey) and deployed on Apache Tomcat.
 
 ---
 
-## 📋 Table of Contents
+##  Table of Contents
 
 - [Overview](#overview)
 - [Technology Stack](#technology-stack)
@@ -19,7 +19,7 @@
 - [Exception Handling](#exception-handling)
 - [Logging](#logging)
 - [Design Decisions](#design-decisions)
-- [📘 Report Questions](#-report-questions)
+- [ Report Questions](#-report-questions)
 - [Academic Context](#academic-context)
 
 ---
@@ -117,7 +117,7 @@ http://localhost:8080/SmartCampus/api/v1
 - **GET requests** — use any browser or Postman
 - **POST / DELETE requests** — use [Postman](https://www.postman.com/)
 
-> ⚠️ **Important:** The in-memory store is empty on startup. Rooms must be created before sensors can be added.
+>  **Important:** The in-memory store is empty on startup. Rooms must be created before sensors can be added.
 
 ---
 
@@ -402,7 +402,7 @@ POST /api/v1/sensors/{sensorId}/readings
 
 **Response — `201 Created`**
 
-> ✅ **Side Effect:** Posting a new reading automatically updates the sensor's `currentValue` field.
+>  **Side Effect:** Posting a new reading automatically updates the sensor's `currentValue` field.
 
 ---
 
@@ -460,7 +460,7 @@ This provides visibility for debugging and monitoring without requiring a dedica
 
 ---
 
-## 📘 Report Questions
+##  Report Questions
 
 
 **Part 1: Service Architecture & Setup**
@@ -571,18 +571,3 @@ Simplifies maintenance and future changes
 
 This results in cleaner resource classes and a more professional API design.
 
----
-
-## Academic Context
-
-| Field | Detail |
-|---|---|
-| **Module** | Client–Server Architectures |
-| **Institution** | University of Westminster (IIT Sri Lanka) |
-| **Programme** | BSc (Hons) Computer Science |
-| **Academic Year** | 2025 / 2026 — Level 5 |
-| **Type** | Individual Coursework |
-
----
-
-*This project was developed for academic purposes.*
