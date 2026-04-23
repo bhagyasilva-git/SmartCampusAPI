@@ -20,7 +20,7 @@
 - [Logging](#logging)
 - [Design Decisions](#design-decisions)
 - [ Report Questions](#-report-questions)
-- [Academic Context](#academic-context)
+
 
 ---
 
