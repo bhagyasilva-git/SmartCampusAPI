@@ -36,7 +36,7 @@ The **Smart Campus API** simulates a smart campus management system, providing e
 - Centralized exception handling with structured JSON error responses
 - Request/response logging as a cross-cutting concern
 
-> **Note:** The system uses in-memory data structures (`HashMap`, `ArrayList`) rather than a database, as per coursework requirements. All data is reset on server restart.
+> **Note:** The system uses in-memory data structures (`HashMap`, `ArrayList`) rather than a database
 
 ---
 
