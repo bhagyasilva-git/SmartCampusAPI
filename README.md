@@ -10,6 +10,7 @@
 - [Technology Stack](#technology-stack)
 - [Project Structure](#project-structure)
 - [Getting Started](#getting-started)
+- [Sample curl Commands](#sample-curl-commands)
 - [API Reference](#api-reference)
   - [Discovery](#1-discovery-endpoint)
   - [Rooms](#2-room-management)
@@ -119,6 +120,73 @@ http://localhost:8080/SmartCampus/api/v1
 > ⚠️ **Important:** The in-memory store is empty on startup. Rooms must be created before sensors can be added.
 
 ---
+
+## Sample curl Commands
+
+**The following examples demonstrate successful interactions with different parts of the Smart Campus API using curl.**
+
+Base URL: http://localhost:8080/SmartCampus/api/v1
+
+**1. Create a Room**
+curl -X POST http://localhost:8080/SmartCampus/api/v1/rooms \
+-H "Content-Type: application/json" \
+-d '{
+  "id": "LIB-301",
+  "name": "Library Quiet Study",
+  "capacity": 120
+}'
+
+Expected Result: 201 Created
+
+**2. Get All Rooms**
+curl -X GET http://localhost:8080/SmartCampus/api/v1/rooms
+
+Expected Result: 200 OK with a list of rooms
+
+**3. Create a Sensor (Linked to a Room)**
+
+curl -X POST http://localhost:8080/SmartCampus/api/v1/sensors \
+-H "Content-Type: application/json" \
+-d '{
+  "id": "TEMP-ENG-01",
+  "type": "Temperature",
+  "status": "ACTIVE",
+  "currentValue": 21.5,
+  "roomId": "LIB-301"
+}'
+
+Expected Result: 201 Created
+If room does not exist: 400 / 422 error response
+
+**4. Filter Sensors by Type (Query Parameter)**
+curl -X GET "http://localhost:8080/SmartCampus/api/v1/sensors?type=Temperature"
+
+Expected Result: 200 OK with filtered sensor list
+
+**5. Add a Sensor Reading (Sub-Resource)**
+curl -X POST http://localhost:8080/SmartCampus/api/v1/sensors/TEMP-ENG-01/readings \
+-H "Content-Type: application/json" \
+-d '{
+  "value": 23.5
+}'
+
+Expected Result: 201 Created
+Side Effect: Updates the sensor’s currentValue
+
+**6. Get All Readings for a Sensor**
+curl -X GET http://localhost:8080/SmartCampus/api/v1/sensors/TEMP-ENG-01/readings
+
+Expected Result: 200 OK with historical readings
+
+**7. Attempt to Delete a Room with Active Sensors (Error Case)**
+curl -X DELETE http://localhost:8080/SmartCampus/api/v1/rooms/LIB-301
+
+Expected Result: 409 Conflict
+
+{
+  "error": "RoomNotEmpty",
+  "message": "Room LIB-301 cannot be deleted because it has active sensors."
+}
 
 ## API Reference
 
