@@ -394,7 +394,6 @@ This provides visibility for debugging and monitoring without requiring a dedica
 
 ## 📘 Report Questions
 
-This section contains the written answers to the conceptual questions specified in each part of the coursework brief. It is intentionally limited to conceptual explanations only, as required.
 
 **Part 1: Service Architecture & Setup**
 **Q1. Default lifecycle of a JAX-RS Resource class and its impact on in-memory data management**
