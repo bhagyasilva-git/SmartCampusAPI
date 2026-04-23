@@ -19,6 +19,7 @@
 - [Logging](#logging)
 - [Design Decisions](#design-decisions)
 - [Academic Context](#academic-context)
+- [Report Questions](#report-questions)
 
 ---
 
