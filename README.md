@@ -44,12 +44,12 @@ The **Smart Campus API** simulates a smart campus management system, providing e
 
 | Layer | Technology |
 |---|---|
-| Language | Java 8+ |
+| Language | Java |
 | Web Framework | JAX-RS (Jersey) |
 | Server | Apache Tomcat 9+ |
 | Build Tool | Maven |
 | Storage | In-memory (`HashMap`, `ArrayList`) |
-| Testing | Postman / Browser |
+| Testing | Postman / Browser / Command Prompt |
 
 ---
 
