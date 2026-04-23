@@ -18,7 +18,7 @@
 - [Exception Handling](#exception-handling)
 - [Logging](#logging)
 - [Design Decisions](#design-decisions)
-- [Report Questions](#report-questions)
+- [📘 Report Questions](#report-questions)
 - [Academic Context](#academic-context)
 
 ---
@@ -392,7 +392,7 @@ This provides visibility for debugging and monitoring without requiring a dedica
 
 ---
 
-## 📘 Conceptual Report (Coursework Questions)
+## 📘 Report Questions
 
 This section contains the written answers to the conceptual questions specified in each part of the coursework brief. It is intentionally limited to conceptual explanations only, as required.
 
